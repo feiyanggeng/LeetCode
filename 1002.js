@@ -26,8 +26,7 @@ var commonChars = function (A) {
   for (let i = 0; i < baseStr.length; i++) {
     let isAll = true;
     for (let j = 1; j < A.length; j++) {
-      let index = A[j].indexOf(baseStr[i]);
-      if (index === -1) {
+      if (A[j].indexOf(baseStr[i]) === -1) {
         isAll = false;
       } else {
         A[j] = A[j].replace(new RegExp(baseStr[i]), "");
