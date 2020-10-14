@@ -9,9 +9,23 @@
 
 var canPartition = function (nums) {
   const sortNums = nums.sort((a, b) => a - b);
+  const halfSum = getArrSum(sortNums) / 2;
+  let sum = 0,
+    res = false;
+  for (let i = 0; i < sortNums.length; i++) {
+    if (sum > halfSum) {
+      res = false;
+      break;
+    } else if (sum === halfSum) {
+      res = true;
+      break;
+    }
+    sum += sortNums[i];
+  }
+  return res;
 };
 
-function sum(arr) {
+function getArrSum(arr) {
   return arr.reduce((pre, next) => pre + next, 0);
 }
 
