@@ -1,24 +1,31 @@
 const input = [
-  {
-    id: "eee",
-    parent: "ddd",
-  },
-  {
-    id: "bbb",
-    parent: "aaa",
-  },
-  {
-    id: "aaa",
-  },
-  {
-    id: "ccc",
-    parent: "bbb",
-  },
-  {
-    id: "ddd",
-    parent: "bbb",
-  },
+  { id: "aaa" },
+  { id: "bbb", parent: "aaa" },
+  { id: "ccc", parent: "aaa" },
+  { id: "ddd", parent: "ccc" },
+  { id: "eee", parent: "ddd" },
+  { id: "fff", parent: "ddd" },
+  { id: "ggg", parent: "fff" },
 ];
+
+const result = {
+  id: "aaa",
+  children: [
+    { id: "bbb", children: [] },
+    {
+      id: "ccc",
+      children: [
+        {
+          id: "ddd",
+          children: [
+            { id: "eee", children: [] },
+            { id: "fff", children: [{ id: "ggg", children: [] }] },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 function makeTree(arr) {
   let map = {}
