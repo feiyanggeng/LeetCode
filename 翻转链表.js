@@ -7,5 +7,5 @@ function reserveList(head) {
     pre = head;
     head = next;
   }
-  return pre;
+  return pre;  
 }
