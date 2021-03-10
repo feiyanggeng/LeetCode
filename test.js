@@ -2,4 +2,4 @@ function fn(...args) {
   console.log(args);
 }
 
-fn(1)
+fn(4)
