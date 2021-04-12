@@ -3,3 +3,6 @@ function fn(...args) {
 }
 
 fn(4)
+
+
+console.log(process.cwd());
